@@ -4,13 +4,14 @@ const port = 3000;
 
 var app = express();
 
+hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express!</h1>');
   res.render('home.hbs', {
-    pageTitle: 'About Page',
+    pageTitle: 'Home Page',
     welcomeMessage: 'Welcome to the HOS',
     currentYear: new Date().getFullYear()
   });
