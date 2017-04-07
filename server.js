@@ -9,12 +9,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express!</h1>');
-  res.send({
-    name: 'Edward',
-    likes: [
-      'biking',
-      'girls'
-    ]
+  res.render('home.hbs', {
+    pageTitle: 'About Page',
+    welcomeMessage: 'Welcome to the HOS',
+    currentYear: new Date().getFullYear()
   });
 });
 
